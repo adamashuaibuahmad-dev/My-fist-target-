@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1FE08A">
+  <title>Vela — Offline</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #070B11;
+      color: #F4F7FA;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 24px;
+    }
+    .wrap { max-width: 340px; }
+    .logo {
+      width: 72px; height: 72px; border-radius: 22px;
+      background: linear-gradient(135deg, #1FE08A, #16C9C9, #1E9BFF);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 28px;
+      font-size: 36px; font-weight: 800; color: #04140E;
+    }
+    h1 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+    p {
+      color: #92A0B3; font-size: 14px;
+      line-height: 1.65; margin-bottom: 32px;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #1FE08A, #1E9BFF);
+      color: #04140E;
+      border: none; border-radius: 16px;
+      padding: 15px 36px;
+      font-weight: 700; font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(31,224,138,0.2);
+      transition: .15s;
+    }
+    .btn:active { transform: scale(0.97); }
+    .status {
+      margin-top: 28px;
+      display: flex; align-items: center; justify-content: center; gap: 7px;
+      font-size: 12.5px; color: #5A6678;
+    }
+    .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #FF5C72;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:.4;} 50%{opacity:1;} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="logo">V</div>
+    <h1>You're offline</h1>
+    <p>
+      Vela couldn't reach the network right now.<br>
+      Your cached data is still available — check your connection and try again.
+    </p>
+    <button class="btn" onclick="window.location.reload()">Try Again</button>
+    <div class="status">
+      <span class="dot"></span>
+      <span id="statusText">No internet connection</span>
+    </div>
+  </div>
+  <script>
+    window.addEventListener('online', () => {
+      document.getElementById('statusText').textContent = 'Back online! Redirecting…';
+      document.querySelector('.dot').style.background = '#1FE08A';
+      setTimeout(() => window.location.replace('/index.html'), 800);
+    });
+    window.addEventListener('offline', () => {
+      document.getElementById('statusText').textContent = 'No internet connection';
+      document.querySelector('.dot').style.background = '#FF5C72';
+    });
+  </script>
+</body>
+</html>

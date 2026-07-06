@@ -1,6 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ═══════════════ PWA META & MANIFEST ═══════════════ -->
+  <meta name="application-name" content="Vela">
+  <meta name="description" content="Send money, pay bills, save and invest — all in one beautiful wallet app.">
+  <meta name="theme-color" content="#1FE08A">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Vela">
+  <meta name="msapplication-TileColor" content="#070B11">
+  <meta name="msapplication-TileImage" content="icons/icon-144x144.png">
+  <meta name="msapplication-config" content="browserconfig.xml">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+
+  <!-- Apple Touch Icons -->
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192x192.png">
+
+  <!-- Apple Splash Screens (portrait, common sizes) -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- ════════════════════════════════════════════════════ -->
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vela — Money Transfer & Digital Wallet</title>
@@ -1303,5 +1331,183 @@
 
 
   <script src="script.js"></script>
+
+  <!-- ═══════════════ SERVICE WORKER + PWA INSTALL ═══════════════ -->
+  <script>
+    // ── Service Worker Registration ───────────────────────────────
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
+          .then(reg => {
+            console.log('[PWA] Service worker registered. Scope:', reg.scope);
+
+            // Listen for a new SW waiting to activate
+            reg.addEventListener('updatefound', () => {
+              const newWorker = reg.installing;
+              newWorker.addEventListener('statechange', () => {
+                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                  showUpdateBanner();
+                }
+              });
+            });
+          })
+          .catch(err => console.error('[PWA] SW registration failed:', err));
+
+        // Reload when new SW takes control
+        let refreshing = false;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+          if (!refreshing) { refreshing = true; window.location.reload(); }
+        });
+      });
+    }
+
+    // ── Install Prompt (Add to Home Screen) ───────────────────────
+    let deferredPrompt = null;
+
+    window.addEventListener('beforeinstallprompt', e => {
+      e.preventDefault();
+      deferredPrompt = e;
+      showInstallBanner();
+    });
+
+    window.addEventListener('appinstalled', () => {
+      console.log('[PWA] App installed successfully');
+      hideInstallBanner();
+      deferredPrompt = null;
+    });
+
+    // ── Deep-link shortcuts ───────────────────────────────────────
+    (function handleShortcuts() {
+      const params = new URLSearchParams(window.location.search);
+      const action = params.get('action');
+      if (!action) return;
+      const map = { send: 'send-money', bills: 'bills-hub', scan: 'scan-qr' };
+      if (map[action]) {
+        // Wait for app to boot, then navigate
+        const tid = setInterval(() => {
+          if (typeof go === 'function') {
+            clearInterval(tid);
+            go(map[action]);
+          }
+        }, 200);
+      }
+    })();
+
+    // ── Install Banner UI ─────────────────────────────────────────
+    function showInstallBanner() {
+      if (document.getElementById('pwaBanner')) return;
+      const banner = document.createElement('div');
+      banner.id = 'pwaBanner';
+      banner.innerHTML = `
+        <div style="display:flex;align-items:center;gap:12px;flex:1;">
+          <img src="icons/icon-72x72.png" width="38" height="38" style="border-radius:10px;" alt="Vela icon">
+          <div>
+            <div style="font-weight:700;font-size:13.5px;">Install Vela</div>
+            <div style="font-size:11.5px;color:#92A0B3;margin-top:1px;">Add to Home Screen for the best experience</div>
+          </div>
+        </div>
+        <button id="pwaBannerInstall" onclick="triggerInstall()" style="
+          background:linear-gradient(135deg,#1FE08A,#1E9BFF);
+          color:#04140E;border:none;border-radius:12px;
+          padding:9px 16px;font-weight:700;font-size:12.5px;cursor:pointer;white-space:nowrap;">
+          Install
+        </button>
+        <button onclick="hideInstallBanner()" style="
+          background:transparent;border:none;color:#92A0B3;
+          font-size:20px;cursor:pointer;padding:4px;line-height:1;">✕</button>`;
+      Object.assign(banner.style, {
+        position: 'fixed', bottom: '0', left: '0', right: '0',
+        background: 'rgba(14,20,32,0.96)',
+        backdropFilter: 'blur(16px)',
+        borderTop: '1px solid rgba(255,255,255,0.08)',
+        padding: '14px 18px',
+        display: 'flex', alignItems: 'center', gap: '10px',
+        zIndex: '9999',
+        fontFamily: 'Inter,sans-serif',
+        color: '#F4F7FA',
+        transform: 'translateY(100%)',
+        transition: 'transform .35s cubic-bezier(.2,.8,.2,1)'
+      });
+      document.body.appendChild(banner);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => { banner.style.transform = 'translateY(0)'; });
+      });
+    }
+
+    function hideInstallBanner() {
+      const b = document.getElementById('pwaBanner');
+      if (b) { b.style.transform = 'translateY(100%)'; setTimeout(() => b.remove(), 400); }
+    }
+
+    async function triggerInstall() {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log('[PWA] Install outcome:', outcome);
+      deferredPrompt = null;
+      hideInstallBanner();
+    }
+
+    // ── Update Banner UI ──────────────────────────────────────────
+    function showUpdateBanner() {
+      if (document.getElementById('pwaUpdateBanner')) return;
+      const banner = document.createElement('div');
+      banner.id = 'pwaUpdateBanner';
+      banner.innerHTML = `
+        <div style="flex:1;font-size:13px;">
+          <b>Update available!</b> Reload for the latest version of Vela.
+        </div>
+        <button onclick="applyUpdate()" style="
+          background:linear-gradient(135deg,#1FE08A,#1E9BFF);
+          color:#04140E;border:none;border-radius:10px;
+          padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer;">
+          Reload
+        </button>`;
+      Object.assign(banner.style, {
+        position: 'fixed', top: '60px', left: '16px', right: '16px',
+        background: 'rgba(14,20,32,0.96)',
+        backdropFilter: 'blur(16px)',
+        border: '1px solid rgba(31,224,138,0.3)',
+        borderRadius: '16px',
+        padding: '14px 16px',
+        display: 'flex', alignItems: 'center', gap: '12px',
+        zIndex: '9999',
+        fontFamily: 'Inter,sans-serif', color: '#F4F7FA',
+        boxShadow: '0 8px 24px rgba(31,224,138,0.18)'
+      });
+      document.body.appendChild(banner);
+    }
+
+    function applyUpdate() {
+      navigator.serviceWorker.controller?.postMessage({ type: 'SKIP_WAITING' });
+    }
+
+    // ── Online / Offline indicator ────────────────────────────────
+    function updateOnlineStatus() {
+      const isOnline = navigator.onLine;
+      let bar = document.getElementById('offlineBar');
+      if (!isOnline) {
+        if (!bar) {
+          bar = document.createElement('div');
+          bar.id = 'offlineBar';
+          bar.textContent = '📡  No internet connection — offline mode';
+          Object.assign(bar.style, {
+            position: 'fixed', top: '0', left: '0', right: '0',
+            background: '#FF5C72', color: '#fff',
+            textAlign: 'center', padding: '8px',
+            fontSize: '12.5px', fontWeight: '600',
+            zIndex: '10000', fontFamily: 'Inter,sans-serif'
+          });
+          document.body.appendChild(bar);
+        }
+      } else {
+        bar?.remove();
+      }
+    }
+    window.addEventListener('online',  updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+  </script>
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+
 </body>
 </html>

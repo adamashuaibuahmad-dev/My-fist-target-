@@ -1,0 +1,51 @@
+/* =====================================================
+   VELA DESIGN SYSTEM — COLOR & TOKEN REFERENCE
+   Use these variables in any additional CSS files
+   ===================================================== */
+
+:root {
+  /* ── Backgrounds ── */
+  --bg:             #070B11;
+  --bg-soft:        #0A0F17;
+  --bg-elevated:    #0E1420;
+
+  /* ── Surfaces (glass layers) ── */
+  --surface:              rgba(255,255,255,0.045);
+  --surface-2:            rgba(255,255,255,0.07);
+  --surface-border:       rgba(255,255,255,0.09);
+  --surface-border-soft:  rgba(255,255,255,0.06);
+
+  /* ── Typography ── */
+  --text-1: #F4F7FA;   /* primary */
+  --text-2: #92A0B3;   /* secondary / muted */
+  --text-3: #5A6678;   /* placeholder / disabled */
+
+  /* ── Brand Accent ── */
+  --green:      #1FE08A;
+  --green-soft: rgba(31,224,138,0.2);
+  --blue:       #1E9BFF;
+  --blue-soft:  rgba(30,155,255,0.2);
+
+  /* ── Gradients ── */
+  --grad:      linear-gradient(135deg, #1FE08A 0%, #16C9C9 45%, #1E9BFF 100%);
+  --grad-soft: linear-gradient(135deg, rgba(31,224,138,0.16) 0%, rgba(30,155,255,0.16) 100%);
+  --grad-text: linear-gradient(95deg, #3FF0A6 0%, #1E9BFF 100%);
+
+  /* ── Semantic ── */
+  --amber: #FFB347;
+  --red:   #FF5C72;
+
+  /* ── Radii ── */
+  --radius-xl: 28px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+
+  /* ── Shadows ── */
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.35);
+  --shadow-glow: 0 8px 24px rgba(31,224,138,0.18), 0 8px 24px rgba(30,155,255,0.12);
+
+  /* ── Typography Stacks ── */
+  --font-display: 'Sora', sans-serif;
+  --font-body:    'Inter', sans-serif;
+}
