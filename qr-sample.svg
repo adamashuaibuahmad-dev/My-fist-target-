@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
+  <rect width="150" height="150" fill="#fff"/>
+  <g fill="#070B11">
+    <rect x="9" y="9" width="33" height="33"/>
+    <rect x="108" y="9" width="33" height="33"/>
+    <rect x="9" y="108" width="33" height="33"/>
+    <rect x="18" y="18" width="15" height="15" fill="#fff"/>
+    <rect x="117" y="18" width="15" height="15" fill="#fff"/>
+    <rect x="18" y="117" width="15" height="15" fill="#fff"/>
+    <rect x="51" y="9" width="9" height="9"/>
+    <rect x="69" y="9" width="9" height="9"/>
+    <rect x="87" y="9" width="9" height="9"/>
+    <rect x="51" y="27" width="9" height="9"/>
+    <rect x="87" y="27" width="9" height="9"/>
+    <rect x="69" y="45" width="9" height="9"/>
+    <rect x="51" y="51" width="21" height="21"/>
+    <rect x="87" y="51" width="21" height="21"/>
+    <rect x="51" y="87" width="9" height="9"/>
+    <rect x="69" y="87" width="9" height="9"/>
+    <rect x="87" y="87" width="9" height="9"/>
+    <rect x="51" y="105" width="9" height="9"/>
+    <rect x="69" y="123" width="9" height="9"/>
+    <rect x="87" y="105" width="9" height="9"/>
+    <rect x="51" y="69" width="9" height="30"/>
+    <rect x="90" y="69" width="9" height="30"/>
+    <rect x="120" y="69" width="21" height="9"/>
+    <rect x="120" y="87" width="21" height="21"/>
+    <rect x="120" y="120" width="21" height="21"/>
+  </g>
+</svg>

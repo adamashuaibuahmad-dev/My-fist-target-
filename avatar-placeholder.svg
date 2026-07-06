@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54">
+  <defs><linearGradient id="ag" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1FE08A"/><stop offset="100%" stop-color="#1E9BFF"/></linearGradient></defs>
+  <rect width="54" height="54" rx="16" fill="url(#ag)"/>
+  <text x="27" y="36" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="18" fill="#04140E">DO</text>
+</svg>

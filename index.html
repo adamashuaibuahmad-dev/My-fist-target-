@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vela — Money Transfer & Digital Wallet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Material+Symbols+Rounded:opsz,wght,FILL@20,400,0..1" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="stage">
+  <div class="stage-header">
+    <div class="brand"><span class="mark">V</span> Vela — Money & Wallet</div>
+    <p>Interactive UI/UX prototype · dark theme · glassmorphism · click around the screen <span class="hint">just like a real app</span></p>
+  </div>
+
+  <div class="phone-frame">
+    <div class="phone-screen-wrap">
+      <div class="notch"></div>
+      <div class="status-bar">
+        <span id="clock">9:41</span>
+        <div class="icons">
+          <span class="material-symbols-rounded">signal_cellular_alt</span>
+          <span class="material-symbols-rounded">wifi</span>
+          <span class="material-symbols-rounded">battery_full</span>
+        </div>
+      </div>
+
+      <div class="screens" id="screens">
+        <!-- ============================================================ -->
+        <!-- SCREEN: SPLASH -->
+        <!-- ============================================================ -->
+        <div class="screen active" id="screen-splash" style="align-items:center; justify-content:center; position:relative; overflow:hidden;">
+          <div class="blob" style="width:260px;height:260px; background:var(--green); top:10%; left:-60px;"></div>
+          <div class="blob" style="width:220px;height:220px; background:var(--blue); bottom:12%; right:-50px; animation-delay:2s;"></div>
+          <div style="position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; gap:18px;">
+            <div style="width:84px;height:84px;border-radius:26px;background:var(--grad); display:flex;align-items:center;justify-content:center; box-shadow:var(--shadow-glow);">
+              <span style="font-family:var(--font-display); font-weight:800; font-size:40px; color:#04140E;">V</span>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-family:var(--font-display); font-weight:800; font-size:26px; letter-spacing:-0.5px;">Vela</div>
+              <div class="muted tiny" style="margin-top:4px;">Money, moved beautifully</div>
+            </div>
+          </div>
+          <div style="position:absolute; bottom:54px; display:flex; flex-direction:column; align-items:center; gap:10px; z-index:2;">
+            <div style="width:130px; height:3px; border-radius:3px; background:var(--surface-2); overflow:hidden;">
+              <div style="width:60%; height:100%; background:var(--grad); border-radius:3px; animation:loadbar 1.6s ease-in-out infinite;"></div>
+            </div>
+            <span class="tiny muted">Secured by 256-bit encryption</span>
+          </div>
+        </div>
+        <!-- ============================================================ -->
+        <!-- ONBOARDING -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-onboard-1">
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; padding:0 30px; text-align:center; overflow:hidden;">
+            <div class="blob" style="width:240px;height:240px;background:var(--green); top:6%; right:-70px;"></div>
+            <div class="glass" style="width:220px; height:220px; border-radius:32px; display:flex; align-items:center; justify-content:center; margin-bottom:38px; position:relative; z-index:2;">
+              <span class="material-symbols-rounded" style="font-size:90px; background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent;">bolt</span>
+            </div>
+            <h2 style="font-family:var(--font-display); font-size:23px; font-weight:700; margin-bottom:12px; position:relative; z-index:2;">Send money in seconds</h2>
+            <p class="muted" style="font-size:13.5px; line-height:1.6; position:relative; z-index:2;">Transfer to any bank or wallet across the country, instantly and with zero stress.</p>
+          </div>
+          <div class="screen-content" style="padding-bottom:36px;">
+            <div class="dots-indicator" style="margin-bottom:22px;"><span class="dd on"></span><span class="dd"></span><span class="dd"></span></div>
+            <div class="row" style="gap:12px;">
+              <button class="btn btn-ghost" style="flex:1;" data-goto="login">Skip</button>
+              <button class="btn btn-primary" style="flex:2;" data-goto="onboard-2">Next <span class="material-symbols-rounded" style="font-size:18px;">arrow_forward</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="screen" id="screen-onboard-2">
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; padding:0 30px; text-align:center; overflow:hidden;">
+            <div class="blob" style="width:240px;height:240px;background:var(--blue); top:8%; left:-70px;"></div>
+            <div class="glass" style="width:220px; height:220px; border-radius:32px; display:flex; align-items:center; justify-content:center; margin-bottom:38px; position:relative; z-index:2;">
+              <span class="material-symbols-rounded" style="font-size:90px; background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent;">receipt_long</span>
+            </div>
+            <h2 style="font-family:var(--font-display); font-size:23px; font-weight:700; margin-bottom:12px; position:relative; z-index:2;">Pay every bill in one app</h2>
+            <p class="muted" style="font-size:13.5px; line-height:1.6; position:relative; z-index:2;">Airtime, data, electricity, TV and more — pay instantly without leaving the house.</p>
+          </div>
+          <div class="screen-content" style="padding-bottom:36px;">
+            <div class="dots-indicator" style="margin-bottom:22px;"><span class="dd"></span><span class="dd on"></span><span class="dd"></span></div>
+            <div class="row" style="gap:12px;">
+              <button class="btn btn-ghost" style="flex:1;" data-goto="login">Skip</button>
+              <button class="btn btn-primary" style="flex:2;" data-goto="onboard-3">Next <span class="material-symbols-rounded" style="font-size:18px;">arrow_forward</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="screen" id="screen-onboard-3">
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; padding:0 30px; text-align:center; overflow:hidden;">
+            <div class="blob" style="width:240px;height:240px;background:var(--green); bottom:8%; right:-70px;"></div>
+            <div class="glass" style="width:220px; height:220px; border-radius:32px; display:flex; align-items:center; justify-content:center; margin-bottom:38px; position:relative; z-index:2;">
+              <span class="material-symbols-rounded" style="font-size:90px; background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent;">shield_lock</span>
+            </div>
+            <h2 style="font-family:var(--font-display); font-size:23px; font-weight:700; margin-bottom:12px; position:relative; z-index:2;">Your money, fully protected</h2>
+            <p class="muted" style="font-size:13.5px; line-height:1.6; position:relative; z-index:2;">Biometric login, PIN protection and bank-grade encryption keep your wallet safe.</p>
+          </div>
+          <div class="screen-content" style="padding-bottom:36px;">
+            <div class="dots-indicator" style="margin-bottom:22px;"><span class="dd"></span><span class="dd"></span><span class="dd on"></span></div>
+            <button class="btn btn-primary" data-goto="signup">Get Started <span class="material-symbols-rounded" style="font-size:18px;">arrow_forward</span></button>
+            <div style="text-align:center; margin-top:14px;"><span class="tiny muted">Already have an account? </span><a class="tiny" style="color:var(--green); font-weight:700;" data-goto="login">Log in</a></div>
+          </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- LOGIN -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-login">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="top-pad"></div>
+            <h1 style="font-family:var(--font-display); font-size:27px; font-weight:800;">Welcome back</h1>
+            <p class="muted" style="font-size:13.5px; margin-top:6px;">Log in to continue to your wallet</p>
+
+            <div style="margin-top:30px;">
+              <div class="field">
+                <label>Phone number or email</label>
+                <div class="input-wrap"><span class="material-symbols-rounded">person</span><input type="text" placeholder="daniel@example.com" value="daniel@example.com"></div>
+              </div>
+              <div class="field">
+                <label>Password</label>
+                <div class="input-wrap"><span class="material-symbols-rounded">lock</span><input type="password" placeholder="••••••••" value="••••••••"><span class="material-symbols-rounded toggle-eye">visibility</span></div>
+              </div>
+              <div style="text-align:right; margin-bottom:22px;"><a class="tiny" style="color:var(--green); font-weight:700;" data-goto="forgot-password">Forgot password?</a></div>
+              <button class="btn btn-primary" data-goto="biometric-login">Log In</button>
+
+              <div class="row" style="margin:22px 0; gap:10px;">
+                <div class="divider" style="flex:1; margin:0;"></div><span class="tiny muted">or continue with</span><div class="divider" style="flex:1; margin:0;"></div>
+              </div>
+              <div class="row" style="gap:12px;">
+                <button class="btn btn-secondary" style="flex:1;"><span class="material-symbols-rounded">fingerprint</span> Fingerprint</button>
+                <button class="btn btn-secondary" style="flex:1;"><span class="material-symbols-rounded">face</span> Face ID</button>
+              </div>
+            </div>
+          </div></div>
+          <div class="screen-content" style="padding:14px 22px 30px; text-align:center;">
+            <span class="tiny muted">Don't have an account? </span><a class="tiny" style="color:var(--green); font-weight:700;" data-goto="signup">Sign up</a>
+          </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SIGN UP -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-signup">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar" style="padding:62px 0 0;"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><div></div></div>
+            <h1 style="font-family:var(--font-display); font-size:27px; font-weight:800; margin-top:14px;">Create your account</h1>
+            <p class="muted" style="font-size:13.5px; margin-top:6px;">It only takes a minute to get started</p>
+
+            <div style="margin-top:26px;">
+              <div class="field"><label>Full name</label><div class="input-wrap"><span class="material-symbols-rounded">badge</span><input type="text" placeholder="John Doe"></div></div>
+              <div class="field"><label>Phone number</label><div class="input-wrap"><span class="material-symbols-rounded">call</span><input type="text" placeholder="+234 801 234 5678"></div></div>
+              <div class="field"><label>Email address</label><div class="input-wrap"><span class="material-symbols-rounded">mail</span><input type="text" placeholder="you@example.com"></div></div>
+              <div class="field"><label>Create password</label><div class="input-wrap"><span class="material-symbols-rounded">lock</span><input type="password" placeholder="Min. 8 characters"><span class="material-symbols-rounded toggle-eye">visibility</span></div></div>
+              <div class="row" style="margin:16px 0 22px; gap:9px; align-items:flex-start;">
+                <div style="width:18px;height:18px;border-radius:6px;background:var(--grad); flex-shrink:0; margin-top:1px; display:flex;align-items:center;justify-content:center;"><span class="material-symbols-rounded" style="font-size:13px; color:#04140E;">check</span></div>
+                <span class="tiny muted" style="line-height:1.5;">I agree to Vela's <a style="color:var(--green); font-weight:600;">Terms & Conditions</a> and <a style="color:var(--green); font-weight:600;">Privacy Policy</a></span>
+              </div>
+              <button class="btn btn-primary" data-goto="otp">Create Account</button>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- FORGOT PASSWORD -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-forgot-password">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar" style="padding:62px 0 0;"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><div></div></div>
+            <div class="glass" style="width:64px;height:64px;border-radius:20px; display:flex;align-items:center;justify-content:center; margin-top:22px;">
+              <span class="material-symbols-rounded" style="font-size:30px; color:var(--green);">key</span>
+            </div>
+            <h1 style="font-family:var(--font-display); font-size:24px; font-weight:800; margin-top:18px;">Forgot password?</h1>
+            <p class="muted" style="font-size:13.5px; margin-top:6px; line-height:1.6;">Enter the email linked to your account and we'll send a reset code.</p>
+            <div style="margin-top:26px;">
+              <div class="field"><label>Email address</label><div class="input-wrap"><span class="material-symbols-rounded">mail</span><input type="text" placeholder="you@example.com" value="daniel@example.com"></div></div>
+              <button class="btn btn-primary" data-goto="otp">Send Reset Code</button>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- OTP VERIFICATION -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-otp">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar" style="padding:62px 0 0;"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><div></div></div>
+            <div class="glass" style="width:64px;height:64px;border-radius:20px; display:flex;align-items:center;justify-content:center; margin-top:22px;">
+              <span class="material-symbols-rounded" style="font-size:30px; color:var(--blue);">sms</span>
+            </div>
+            <h1 style="font-family:var(--font-display); font-size:24px; font-weight:800; margin-top:18px;">Verify your number</h1>
+            <p class="muted" style="font-size:13.5px; margin-top:6px; line-height:1.6;">Enter the 4-digit code sent to <b style="color:var(--text-1);">+234 801 *** 5678</b></p>
+            <div class="otp-row">
+              <input maxlength="1" value="4"><input maxlength="1" value="2"><input maxlength="1" value="9"><input maxlength="1">
+            </div>
+            <div style="text-align:center; margin-bottom:22px;"><span class="tiny muted">Didn't get a code? </span><a class="tiny" style="color:var(--green); font-weight:700;" onclick="toast('Code resent')">Resend in 0:32</a></div>
+            <button class="btn btn-primary" data-goto="create-pin">Verify & Continue</button>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- CREATE TRANSACTION PIN -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-create-pin">
+          <div class="screen-content" style="flex:1; display:flex; flex-direction:column;">
+            <div class="topbar" style="padding:62px 0 0;"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><div></div></div>
+            <div style="text-align:center; margin-top:18px;">
+              <h1 style="font-family:var(--font-display); font-size:22px; font-weight:800;">Create transaction PIN</h1>
+              <p class="muted" style="font-size:13px; margin-top:8px; line-height:1.6;">This 4-digit PIN secures every transfer & payment you make</p>
+              <div class="pin-dots" id="pinDots">
+                <div class="d filled"></div><div class="d filled"></div><div class="d"></div><div class="d"></div>
+              </div>
+            </div>
+            <div style="flex:1;"></div>
+            <div class="keypad" style="margin-bottom:30px;">
+              <button>1</button><button>2</button><button>3</button>
+              <button>4</button><button>5</button><button>6</button>
+              <button>7</button><button>8</button><button>9</button>
+              <button class="fn"><span class="material-symbols-rounded">fingerprint</span></button>
+              <button>0</button>
+              <button class="fn" onclick="document.querySelectorAll('#pinDots .d')[3].classList.remove('filled')"><span class="material-symbols-rounded">backspace</span></button>
+            </div>
+            <button class="btn btn-primary" style="margin:0 22px 26px;" data-goto="biometric-setup">Confirm PIN</button>
+          </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- BIOMETRIC SETUP -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-biometric-setup">
+          <div class="screen-content" style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+            <div style="position:relative; width:140px; height:140px; display:flex; align-items:center; justify-content:center; margin-bottom:30px;">
+              <div style="position:absolute; inset:0; border-radius:50%; background:var(--grad-soft); animation:pulse 2s infinite;"></div>
+              <span class="material-symbols-rounded" style="font-size:70px; background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent;">fingerprint</span>
+            </div>
+            <h1 style="font-family:var(--font-display); font-size:22px; font-weight:800;">Enable biometric login</h1>
+            <p class="muted" style="font-size:13.5px; margin-top:10px; line-height:1.6; max-width:280px;">Use your fingerprint or Face ID to log in faster and keep your wallet extra secure.</p>
+          </div>
+          <div class="screen-content" style="padding-bottom:36px;">
+            <button class="btn btn-primary" onclick="toast('Fingerprint enabled')" data-goto="home" style="margin-bottom:10px;"><span class="material-symbols-rounded" style="font-size:18px;">fingerprint</span> Enable Fingerprint</button>
+            <button class="btn btn-secondary" onclick="toast('Face ID enabled')" data-goto="home" style="margin-bottom:10px;"><span class="material-symbols-rounded" style="font-size:18px;">face</span> Enable Face ID</button>
+            <button class="btn btn-ghost" data-goto="home">Maybe later</button>
+          </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- BIOMETRIC LOGIN PROMPT -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-biometric-login">
+          <div class="screen-content" style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; position:relative; overflow:hidden;">
+            <div class="blob" style="width:220px;height:220px;background:var(--blue); top:10%; right:-60px;"></div>
+            <div class="avatar" style="width:70px;height:70px;border-radius:22px; font-size:22px; margin-bottom:18px; position:relative; z-index:2;">DO</div>
+            <div style="font-weight:700; font-size:16px; position:relative; z-index:2;">Daniel Okafor</div>
+            <div class="muted tiny" style="margin-top:4px; position:relative; z-index:2;">Use Face ID to continue</div>
+            <div style="position:relative; width:120px; height:120px; display:flex; align-items:center; justify-content:center; margin:36px 0; z-index:2;" onclick="toast('Face ID recognized')">
+              <div style="position:absolute; inset:0; border-radius:36px; border:2px solid var(--surface-border);"></div>
+              <span class="material-symbols-rounded" style="font-size:54px; color:var(--green);">face</span>
+            </div>
+            <button class="btn btn-primary" style="position:relative; z-index:2; width:auto; padding:14px 30px;" data-goto="home">Continue</button>
+          </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- HOME / DASHBOARD -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-home">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar" style="padding:58px 0 0;">
+              <div class="row">
+                <div class="avatar">DO</div>
+                <div>
+                  <div class="tiny muted">Good evening 👋</div>
+                  <div style="font-weight:700; font-size:15px;">Daniel Okafor</div>
+                </div>
+              </div>
+              <div class="row" style="gap:8px;">
+                <button class="icon-btn" data-goto="kyc-verification"><span class="material-symbols-rounded" style="font-size:18px; color:var(--amber);">verified</span></button>
+                <button class="icon-btn" data-goto="notifications" style="position:relative;"><span class="material-symbols-rounded">notifications</span><span style="position:absolute; top:7px; right:8px; width:7px; height:7px; border-radius:50%; background:var(--red);"></span></button>
+              </div>
+            </div>
+
+            <!-- balance card -->
+            <div class="glass" style="margin-top:18px; padding:22px; position:relative; overflow:hidden;">
+              <div class="blob" style="width:160px;height:160px; background:var(--green); top:-50px; right:-40px; opacity:.35;"></div>
+              <div class="blob" style="width:140px;height:140px; background:var(--blue); bottom:-50px; left:-30px; opacity:.3; animation-delay:1.5s;"></div>
+              <div style="position:relative; z-index:2;">
+                <div class="row between">
+                  <span class="tiny muted">Available Balance</span>
+                  <span class="material-symbols-rounded" style="font-size:18px; color:var(--text-2);" id="eyeToggle" onclick="toggleBalance()">visibility</span>
+                </div>
+                <div class="display-num" id="balanceText" style="font-size:32px; margin-top:8px;">₦248,650.75</div>
+                <div class="row between" style="margin-top:18px;">
+                  <div>
+                    <div class="tiny muted">Account Number</div>
+                    <div style="font-weight:700; font-size:13px; margin-top:2px;">8821 0046 7732 · Vela MFB</div>
+                  </div>
+                  <button class="icon-btn" style="width:32px;height:32px;" onclick="toast('Account number copied')"><span class="material-symbols-rounded" style="font-size:16px;">content_copy</span></button>
+                </div>
+                <div class="row between" style="margin-top:10px;">
+                  <div>
+                    <div class="tiny muted">Wallet ID</div>
+                    <div style="font-weight:700; font-size:13px; margin-top:2px;">VLA-209384-NG</div>
+                  </div>
+                  <button class="icon-btn" style="width:32px;height:32px;" onclick="toast('Wallet ID copied')"><span class="material-symbols-rounded" style="font-size:16px;">content_copy</span></button>
+                </div>
+                <div class="row" style="gap:10px; margin-top:20px;">
+                  <button class="btn btn-primary" style="flex:1; padding:13px;" data-goto="receive">Add Money</button>
+                  <button class="btn btn-secondary" style="flex:1; padding:13px;" data-goto="send-money">Withdraw</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- stat row -->
+            <div class="row" style="gap:10px; margin-top:14px;">
+              <div class="card" style="flex:1; padding:14px;" data-goto="finance-hub">
+                <span class="material-symbols-rounded" style="color:var(--green); font-size:18px;">savings</span>
+                <div class="tiny muted" style="margin-top:8px;">Savings</div>
+                <div style="font-weight:700; font-size:13.5px; font-family:var(--font-display); margin-top:2px;">₦1,320,400</div>
+              </div>
+              <div class="card" style="flex:1; padding:14px;" data-goto="rewards">
+                <span class="material-symbols-rounded" style="color:var(--blue); font-size:18px;">redeem</span>
+                <div class="tiny muted" style="margin-top:8px;">Cashback</div>
+                <div style="font-weight:700; font-size:13.5px; font-family:var(--font-display); margin-top:2px;">₦4,250.00</div>
+              </div>
+              <div class="card" style="flex:1; padding:14px;" data-goto="rewards">
+                <span class="material-symbols-rounded" style="color:var(--amber); font-size:18px;">star</span>
+                <div class="tiny muted" style="margin-top:8px;">Points</div>
+                <div style="font-weight:700; font-size:13.5px; font-family:var(--font-display); margin-top:2px;">1,280 pts</div>
+              </div>
+            </div>
+
+            <!-- quick actions -->
+            <div class="section-title"><h3>Quick Actions</h3></div>
+            <div class="grid-4" id="quickActions"></div>
+
+            <!-- analytics -->
+            <div class="section-title"><h3>Transaction Analytics</h3><span class="link" data-goto="transactions">See report</span></div>
+            <div class="card">
+              <div class="row between"><span class="tiny muted">This week</span><span class="chip success">▲ 12.4%</span></div>
+              <div class="row" style="align-items:flex-end; gap:8px; height:90px; margin-top:16px;" id="chartBars"></div>
+              <div class="row between" style="margin-top:6px;">
+                <span class="tiny muted">Mon</span><span class="tiny muted">Tue</span><span class="tiny muted">Wed</span><span class="tiny muted">Thu</span><span class="tiny muted">Fri</span><span class="tiny muted">Sat</span><span class="tiny muted">Sun</span>
+              </div>
+              <div class="divider"></div>
+              <div class="row between">
+                <div class="row" style="gap:8px;"><span style="width:9px;height:9px;border-radius:3px;background:var(--green);"></span><span class="tiny muted">Money In · ₦612,000</span></div>
+              </div>
+              <div class="row between" style="margin-top:8px;">
+                <div class="row" style="gap:8px;"><span style="width:9px;height:9px;border-radius:3px;background:var(--blue);"></span><span class="tiny muted">Money Out · ₦398,200</span></div>
+              </div>
+            </div>
+
+            <!-- recent transactions -->
+            <div class="section-title"><h3>Recent Transactions</h3><span class="link" data-goto="transactions">See all</span></div>
+            <div class="card" style="padding:6px 16px;" id="recentTxnList"></div>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- NOTIFICATIONS -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-notifications">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><h1>Notifications</h1><span style="width:38px;"></span></div>
+            <div class="section-title" style="margin-top:4px;"><h3 style="font-size:12.5px; color:var(--text-2); text-transform:uppercase; letter-spacing:0.5px;">Today</h3></div>
+            <div class="card" style="padding:4px 16px;">
+              <div class="list-item">
+                <div class="ic" style="background:var(--green-soft);"><span class="material-symbols-rounded" style="color:var(--green); font-size:20px;">south_west</span></div>
+                <div class="meta"><div class="t1">Money received</div><div class="t2">₦45,000 from Chiamaka Eze</div></div>
+                <div class="end"><div class="t2">2m ago</div></div>
+              </div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item" data-goto="bill-pay">
+                <div class="ic" style="background:var(--blue-soft);"><span class="material-symbols-rounded" style="color:var(--blue); font-size:20px;">bolt</span></div>
+                <div class="meta"><div class="t1">Electricity bill paid</div><div class="t2">IKEDC token delivered</div></div>
+                <div class="end"><div class="t2">1h ago</div></div>
+              </div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item">
+                <div class="ic" style="background:rgba(255,179,71,0.12);"><span class="material-symbols-rounded" style="color:var(--amber); font-size:20px;">redeem</span></div>
+                <div class="meta"><div class="t1">Cashback earned</div><div class="t2">₦120 added to your wallet</div></div>
+                <div class="end"><div class="t2">3h ago</div></div>
+              </div>
+            </div>
+            <div class="section-title"><h3 style="font-size:12.5px; color:var(--text-2); text-transform:uppercase; letter-spacing:0.5px;">Earlier</h3></div>
+            <div class="card" style="padding:4px 16px;">
+              <div class="list-item">
+                <div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">shield_lock</span></div>
+                <div class="meta"><div class="t1">New device login</div><div class="t2">iPhone 15 Pro · Lagos, NG</div></div>
+                <div class="end"><div class="t2">Yesterday</div></div>
+              </div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item">
+                <div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">campaign</span></div>
+                <div class="meta"><div class="t1">Refer & earn ₦1,000</div><div class="t2">Invite friends to Vela</div></div>
+                <div class="end"><div class="t2">2d ago</div></div>
+              </div>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SEND MONEY — RECIPIENT -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-send-money">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><h1>Send Money</h1><span style="width:38px;"></span></div>
+            <div class="row glass" style="padding:4px; margin-top:6px;">
+              <button class="btn" id="tabBank" onclick="setSendTab('bank')" style="flex:1; padding:11px; background:var(--grad); color:#04140E; font-size:13px;">Bank Transfer</button>
+              <button class="btn" id="tabWallet" onclick="setSendTab('wallet')" style="flex:1; padding:11px; background:transparent; color:var(--text-2); font-size:13px;">Wallet Transfer</button>
+            </div>
+            <div class="input-wrap" style="margin-top:16px;"><span class="material-symbols-rounded">search</span><input type="text" placeholder="Search bank, name or account number"></div>
+
+            <div class="section-title"><h3>Recent Recipients</h3></div>
+            <div class="row" style="gap:14px; overflow-x:auto; padding-bottom:6px;">
+              <button class="grid-icon-item" data-goto="send-amount"><div class="avatar" style="border-radius:50%;">CE</div><span class="lbl">Chiamaka</span></button>
+              <button class="grid-icon-item" data-goto="send-amount"><div class="avatar" style="border-radius:50%; background:linear-gradient(135deg,#1E9BFF,#1FE08A);">TJ</div><span class="lbl">Tunde J.</span></button>
+              <button class="grid-icon-item" data-goto="send-amount"><div class="avatar" style="border-radius:50%; background:linear-gradient(135deg,#FFB347,#FF5C72);">AB</div><span class="lbl">Amaka B.</span></button>
+              <button class="grid-icon-item" data-goto="send-amount"><div class="avatar" style="border-radius:50%; background:var(--surface-2); color:var(--text-2);">+</div><span class="lbl">New</span></button>
+            </div>
+
+            <div class="section-title"><h3>All Contacts</h3></div>
+            <div class="card" style="padding:4px 16px;" id="recipientList"></div>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SEND MONEY — AMOUNT / CONFIRM -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-send-amount">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><h1>Enter Amount</h1><span style="width:38px;"></span></div>
+            <div class="card row" style="margin-top:8px; gap:12px;">
+              <div class="avatar" style="border-radius:50%;">CE</div>
+              <div style="flex:1;">
+                <div style="font-weight:700; font-size:14px;">Chiamaka Eze</div>
+                <div class="tiny muted" style="margin-top:2px;">8102 9934 410 · GTBank</div>
+              </div>
+              <span class="material-symbols-rounded" style="color:var(--text-2);">verified</span>
+            </div>
+
+            <div style="text-align:center; margin:34px 0 10px;">
+              <div class="tiny muted">Enter amount</div>
+              <div class="row" style="justify-content:center; align-items:flex-end; gap:4px; margin-top:6px;">
+                <span class="display-num" style="font-size:24px; margin-bottom:6px;">₦</span>
+                <span class="display-num" style="font-size:44px;">15,000</span>
+              </div>
+              <div class="tiny muted" style="margin-top:6px;">Fee: ₦25.00 · Balance: ₦248,650.75</div>
+            </div>
+
+            <div class="row" style="gap:8px; justify-content:center; margin-bottom:24px;">
+              <span class="chip">+₦1,000</span><span class="chip">+₦5,000</span><span class="chip">+₦10,000</span><span class="chip">Max</span>
+            </div>
+
+            <div class="field"><label>What's this for? (optional)</label><div class="input-wrap"><span class="material-symbols-rounded">edit_note</span><input type="text" placeholder="e.g. Rent contribution"></div></div>
+            <div class="row between card" style="margin-top:8px; padding:14px 16px;">
+              <span class="tiny" style="font-weight:600;">Save as beneficiary</span>
+              <div class="switch on"></div>
+            </div>
+          </div></div>
+          <div class="screen-content" style="padding-bottom:30px;">
+            <button class="btn btn-primary" onclick="openSheet('confirmSheet')">Continue</button>
+          </div>
+
+          <div class="bottom-sheet-overlay" id="confirmSheet">
+            <div class="bottom-sheet">
+              <div class="sheet-handle"></div>
+              <h3 style="font-family:var(--font-display); font-size:17px; text-align:center; margin-bottom:18px;">Confirm Transfer</h3>
+              <div style="text-align:center; margin-bottom:18px;">
+                <div class="display-num" style="font-size:30px;">₦15,000.00</div>
+                <div class="tiny muted" style="margin-top:4px;">to Chiamaka Eze · GTBank</div>
+              </div>
+              <div class="divider"></div>
+              <div class="row between" style="margin-bottom:10px;"><span class="tiny muted">Transfer fee</span><span class="tiny" style="font-weight:600;">₦25.00</span></div>
+              <div class="row between" style="margin-bottom:10px;"><span class="tiny muted">Total debit</span><span class="tiny" style="font-weight:600;">₦15,025.00</span></div>
+              <div class="row between" style="margin-bottom:18px;"><span class="tiny muted">Arrives</span><span class="tiny" style="font-weight:600; color:var(--green);">Instantly</span></div>
+              <button class="btn btn-primary" onclick="closeSheet('confirmSheet'); go('send-pin')">Slide to Confirm</button>
+              <button class="btn btn-ghost" style="margin-top:10px;" onclick="closeSheet('confirmSheet')">Cancel</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SEND — PIN CONFIRM -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-send-pin">
+          <div class="screen-content" style="flex:1; display:flex; flex-direction:column;">
+            <div class="topbar" style="padding:62px 0 0;"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><div></div></div>
+            <div style="text-align:center; margin-top:18px;">
+              <h1 style="font-family:var(--font-display); font-size:20px; font-weight:800;">Enter your PIN</h1>
+              <p class="muted" style="font-size:13px; margin-top:8px;">Confirm ₦15,000.00 to Chiamaka Eze</p>
+              <div class="pin-dots"><div class="d filled"></div><div class="d filled"></div><div class="d filled"></div><div class="d"></div></div>
+            </div>
+            <div style="flex:1;"></div>
+            <div class="keypad" style="margin-bottom:30px;">
+              <button>1</button><button>2</button><button>3</button>
+              <button>4</button><button>5</button><button>6</button>
+              <button>7</button><button>8</button><button>9</button>
+              <button class="fn"><span class="material-symbols-rounded">fingerprint</span></button>
+              <button onclick="go('send-success')">0</button>
+              <button class="fn"><span class="material-symbols-rounded">backspace</span></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SEND — SUCCESS -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-send-success">
+          <div class="screen-content" style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding-top:60px;">
+            <div style="width:84px;height:84px;border-radius:50%; background:var(--grad-soft); display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
+              <span class="material-symbols-rounded" style="font-size:46px; color:var(--green);">check_circle</span>
+            </div>
+            <div class="display-num" style="font-size:30px;">₦15,000.00</div>
+            <div class="muted tiny" style="margin-top:6px;">sent to Chiamaka Eze</div>
+            <div class="chip success" style="margin-top:14px;">Transaction Successful</div>
+
+            <div class="card" style="width:100%; margin-top:30px; text-align:left;">
+              <div class="row between" style="margin-bottom:10px;"><span class="tiny muted">Reference</span><span class="tiny" style="font-weight:600;">VLA-TXN-7782910</span></div>
+              <div class="row between" style="margin-bottom:10px;"><span class="tiny muted">Date & Time</span><span class="tiny" style="font-weight:600;">Today, 4:52 PM</span></div>
+              <div class="row between"><span class="tiny muted">Fee</span><span class="tiny" style="font-weight:600;">₦25.00</span></div>
+            </div>
+          </div>
+          <div class="screen-content" style="padding-bottom:30px;">
+            <div class="row" style="gap:10px; margin-bottom:10px;">
+              <button class="btn btn-secondary" style="flex:1;" data-goto="transaction-details"><span class="material-symbols-rounded" style="font-size:17px;">receipt_long</span> Receipt</button>
+              <button class="btn btn-secondary" style="flex:1;" onclick="toast('Receipt shared')"><span class="material-symbols-rounded" style="font-size:17px;">ios_share</span> Share</button>
+            </div>
+            <button class="btn btn-primary" data-goto="home">Done</button>
+          </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- RECEIVE MONEY -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-receive">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><h1>Receive Money</h1><span style="width:38px;"></span></div>
+
+            <div class="glass" style="margin-top:10px; padding:24px; text-align:center;">
+              <div style="width:170px; height:170px; margin:0 auto 16px; background:#fff; border-radius:18px; padding:10px;">
+                <svg viewBox="0 0 100 100" width="100%" height="100%">
+                  <rect width="100" height="100" fill="#fff"/>
+                  <g fill="#070B11">
+                    <rect x="6" y="6" width="22" height="22"/><rect x="72" y="6" width="22" height="22"/><rect x="6" y="72" width="22" height="22"/>
+                    <rect x="12" y="12" width="10" height="10" fill="#fff"/><rect x="78" y="12" width="10" height="10" fill="#fff"/><rect x="12" y="78" width="10" height="10" fill="#fff"/>
+                    <rect x="34" y="6" width="6" height="6"/><rect x="46" y="6" width="6" height="6"/><rect x="58" y="6" width="6" height="6"/>
+                    <rect x="34" y="18" width="6" height="6"/><rect x="58" y="18" width="6" height="6"/><rect x="46" y="30" width="6" height="6"/>
+                    <rect x="34" y="34" width="14" height="14"/><rect x="58" y="34" width="14" height="14"/>
+                    <rect x="34" y="58" width="6" height="6"/><rect x="46" y="58" width="6" height="6"/><rect x="58" y="58" width="6" height="6"/>
+                    <rect x="34" y="70" width="6" height="6"/><rect x="46" y="82" width="6" height="6"/><rect x="58" y="70" width="6" height="6"/>
+                    <rect x="34" y="46" width="6" height="20"/><rect x="60" y="46" width="6" height="20"/><rect x="80" y="46" width="14" height="6"/><rect x="80" y="58" width="14" height="14"/><rect x="80" y="80" width="14" height="14"/>
+                  </g>
+                </svg>
+              </div>
+              <div style="font-weight:700; font-size:15px;">Daniel Okafor</div>
+              <div class="tiny muted" style="margin-top:3px;">Scan to pay or send to my wallet</div>
+              <button class="btn btn-secondary btn-sm" style="margin:14px auto 0;" onclick="toast('QR saved to gallery')"><span class="material-symbols-rounded" style="font-size:16px;">download</span> Save QR Code</button>
+            </div>
+
+            <div class="card" style="margin-top:14px;">
+              <div class="row between"><span class="tiny muted">Account Number</span><button class="icon-btn" style="width:30px;height:30px;" onclick="toast('Copied')"><span class="material-symbols-rounded" style="font-size:15px;">content_copy</span></button></div>
+              <div style="font-weight:700; font-size:16px; margin-top:4px;">8821 0046 7732</div>
+              <div class="tiny muted">Vela Microfinance Bank</div>
+              <div class="divider"></div>
+              <div class="row between"><span class="tiny muted">Wallet ID</span><button class="icon-btn" style="width:30px;height:30px;" onclick="toast('Copied')"><span class="material-symbols-rounded" style="font-size:15px;">content_copy</span></button></div>
+              <div style="font-weight:700; font-size:16px; margin-top:4px;">VLA-209384-NG</div>
+            </div>
+
+            <div class="row" style="gap:10px; margin-top:16px;">
+              <button class="btn btn-secondary" style="flex:1;" onclick="toast('Details shared')"><span class="material-symbols-rounded" style="font-size:17px;">ios_share</span> Share Details</button>
+              <button class="btn btn-primary" style="flex:1;" data-goto="request-money">Request Money</button>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SCAN QR -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-scan-qr" style="background:#000;">
+          <div style="flex:1; position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+            <div style="position:absolute; inset:0; background:linear-gradient(160deg, rgba(31,224,138,0.12), rgba(0,0,0,0.5) 60%);"></div>
+            <div class="topbar" style="position:absolute; top:0; left:0; right:0; z-index:5;">
+              <button class="icon-btn" data-back style="background:rgba(255,255,255,0.1);"><span class="material-symbols-rounded">arrow_back</span></button>
+              <h1>Scan QR Code</h1><span style="width:38px;"></span>
+            </div>
+            <div style="position:relative; width:240px; height:240px; z-index:3;">
+              <div style="position:absolute; top:0; left:0; width:36px; height:36px; border-top:4px solid var(--green); border-left:4px solid var(--green); border-radius:10px 0 0 0;"></div>
+              <div style="position:absolute; top:0; right:0; width:36px; height:36px; border-top:4px solid var(--green); border-right:4px solid var(--green); border-radius:0 10px 0 0;"></div>
+              <div style="position:absolute; bottom:0; left:0; width:36px; height:36px; border-bottom:4px solid var(--green); border-left:4px solid var(--green); border-radius:0 0 0 10px;"></div>
+              <div style="position:absolute; bottom:0; right:0; width:36px; height:36px; border-bottom:4px solid var(--green); border-right:4px solid var(--green); border-radius:0 0 10px 0;"></div>
+              <div style="position:absolute; left:0; right:0; top:50%; height:2px; background:var(--green); box-shadow:0 0 12px var(--green); animation:scanmove 2s ease-in-out infinite;"></div>
+            </div>
+            <div style="position:absolute; bottom:130px; text-align:center; z-index:4; width:100%;">
+              <span class="tiny" style="background:rgba(0,0,0,0.5); padding:8px 16px; border-radius:20px;">Align QR code within frame</span>
+            </div>
+            <div class="row" style="position:absolute; bottom:50px; z-index:4; gap:40px;">
+              <button class="icon-btn" style="background:rgba(255,255,255,0.1); width:50px; height:50px;"><span class="material-symbols-rounded">flash_on</span></button>
+              <button class="icon-btn" style="background:rgba(255,255,255,0.1); width:50px; height:50px;" onclick="toast('Demo payment QR detected')"><span class="material-symbols-rounded">image</span></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- REQUEST MONEY -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-request-money">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><h1>Request Money</h1><span style="width:38px;"></span></div>
+            <div class="field" style="margin-top:8px;"><label>Request from</label><div class="input-wrap"><span class="material-symbols-rounded">person_search</span><input type="text" placeholder="Search name or phone number"></div></div>
+
+            <div style="text-align:center; margin:30px 0 18px;">
+              <div class="tiny muted">Amount to request</div>
+              <div class="row" style="justify-content:center; align-items:flex-end; gap:4px; margin-top:6px;">
+                <span class="display-num" style="font-size:22px; margin-bottom:4px;">₦</span><span class="display-num" style="font-size:38px;">25,000</span>
+              </div>
+            </div>
+            <div class="field"><label>Add a note</label><div class="input-wrap"><span class="material-symbols-rounded">edit_note</span><input type="text" placeholder="What's this request for?"></div></div>
+            <button class="btn btn-primary" style="margin-top:10px;" onclick="toast('Payment request sent')">Send Request</button>
+
+            <div class="section-title"><h3>Or share your request link</h3></div>
+            <div class="card row between">
+              <span class="tiny" style="font-weight:600; color:var(--text-2);">vela.app/pay/dan-okafor</span>
+              <button class="icon-btn" style="width:32px;height:32px;" onclick="toast('Link copied')"><span class="material-symbols-rounded" style="font-size:16px;">content_copy</span></button>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- CASH DEPOSIT / WITHDRAWAL -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-cash-deposit-withdraw">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><h1>Cash Services</h1><span style="width:38px;"></span></div>
+            <div class="row glass" style="padding:4px; margin-top:6px;">
+              <button class="btn" style="flex:1; padding:11px; background:var(--grad); color:#04140E; font-size:13px;">Deposit</button>
+              <button class="btn" style="flex:1; padding:11px; background:transparent; color:var(--text-2); font-size:13px;">Withdraw</button>
+            </div>
+
+            <div class="card" style="margin-top:16px;">
+              <div class="row" style="gap:10px;">
+                <span class="material-symbols-rounded" style="font-size:24px; color:var(--green);">storefront</span>
+                <div>
+                  <div style="font-weight:700; font-size:14px;">Deposit cash at an agent</div>
+                  <div class="tiny muted" style="margin-top:2px;">Generate a code, pay cash, get instant credit</div>
+                </div>
+              </div>
+              <button class="btn btn-primary" style="margin-top:14px;" onclick="toast('Deposit code generated: 481922')">Generate Deposit Code</button>
+            </div>
+
+            <div class="section-title"><h3>Nearby Agents</h3></div>
+            <div class="card" style="padding:4px 16px;">
+              <div class="list-item">
+                <div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">storefront</span></div>
+                <div class="meta"><div class="t1">Vela Agent — Wuse 2</div><div class="t2">0.4km away · Open now</div></div>
+                <div class="end"><span class="chip success">Active</span></div>
+              </div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item">
+                <div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">storefront</span></div>
+                <div class="meta"><div class="t1">Vela Agent — Garki Mall</div><div class="t2">1.2km away · Open now</div></div>
+                <div class="end"><span class="chip success">Active</span></div>
+              </div>
+            </div>
+
+            <div class="section-title"><h3>Withdraw without a card</h3></div>
+            <div class="card">
+              <p class="tiny muted" style="line-height:1.6;">Generate a one-time code and withdraw cash at any Vela agent or partner ATM — no card needed.</p>
+              <button class="btn btn-secondary" style="margin-top:12px;" onclick="toast('Withdrawal code generated: 902145')">Generate Withdrawal Code</button>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- BILLS HUB -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-bills-hub">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar" style="padding:58px 0 10px;"><h1>Pay Bills</h1><button class="icon-btn" data-goto="transactions"><span class="material-symbols-rounded">history</span></button></div>
+            <div class="input-wrap"><span class="material-symbols-rounded">search</span><input type="text" placeholder="Search billers"></div>
+
+            <div class="glass row between" style="margin-top:16px; padding:16px;">
+              <div>
+                <div class="tiny muted">Last paid</div>
+                <div style="font-weight:700; font-size:14px; margin-top:3px;">MTN Airtime · ₦2,000</div>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="openBill('Airtime','phone_iphone')">Repeat</button>
+            </div>
+
+            <div class="section-title"><h3>All Categories</h3></div>
+            <div class="grid-4" id="billsGrid"></div>
+
+            <div class="section-title"><h3>Recent Billers</h3></div>
+            <div class="card" style="padding:4px 16px;">
+              <div class="list-item" onclick="openBill('Electricity','bolt')">
+                <div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">bolt</span></div>
+                <div class="meta"><div class="t1">IKEDC — Prepaid</div><div class="t2">Meter 0445 8821 002</div></div>
+                <div class="end"><span class="material-symbols-rounded" style="color:var(--text-3);">chevron_right</span></div>
+              </div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item" onclick="openBill('Cable TV','live_tv')">
+                <div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">live_tv</span></div>
+                <div class="meta"><div class="t1">DSTV — Compact Plus</div><div class="t2">Smartcard 700 219 441</div></div>
+                <div class="end"><span class="material-symbols-rounded" style="color:var(--text-3);">chevron_right</span></div>
+              </div>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- GENERIC BILL PAYMENT SCREEN -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-bill-pay">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><h1 id="billPayTitle">Airtime</h1><span style="width:38px;"></span></div>
+
+            <div class="row" style="gap:14px; margin:10px 0 18px; overflow-x:auto;">
+              <button class="grid-icon-item" style="width:64px;"><div class="ic" style="background:var(--grad-soft); border-color:var(--green);"><span class="material-symbols-rounded" id="billPayIcon" style="color:var(--green);">phone_iphone</span></div><span class="lbl" style="color:var(--text-1);">MTN</span></button>
+              <button class="grid-icon-item" style="width:64px;"><div class="ic"><span class="material-symbols-rounded">phone_iphone</span></div><span class="lbl">Airtel</span></button>
+              <button class="grid-icon-item" style="width:64px;"><div class="ic"><span class="material-symbols-rounded">phone_iphone</span></div><span class="lbl">Glo</span></button>
+              <button class="grid-icon-item" style="width:64px;"><div class="ic"><span class="material-symbols-rounded">phone_iphone</span></div><span class="lbl">9mobile</span></button>
+            </div>
+
+            <div class="field"><label>Phone / Account / Meter number</label><div class="input-wrap"><span class="material-symbols-rounded">tag</span><input type="text" placeholder="0801 234 5678" value="0801 234 5678"></div></div>
+
+            <div style="text-align:center; margin:26px 0 16px;">
+              <div class="tiny muted">Amount</div>
+              <div class="row" style="justify-content:center; align-items:flex-end; gap:4px; margin-top:6px;"><span class="display-num" style="font-size:22px; margin-bottom:4px;">₦</span><span class="display-num" style="font-size:38px;">2,000</span></div>
+            </div>
+            <div class="row" style="gap:8px; justify-content:center; margin-bottom:20px; flex-wrap:wrap;">
+              <span class="chip">₦500</span><span class="chip">₦1,000</span><span class="chip" style="background:var(--grad-soft); color:var(--green); border-color:var(--green);">₦2,000</span><span class="chip">₦5,000</span>
+            </div>
+
+            <div class="row between card" style="padding:14px 16px;">
+              <span class="tiny" style="font-weight:600;">Save as beneficiary</span>
+              <div class="switch"></div>
+            </div>
+          </div></div>
+          <div class="screen-content" style="padding-bottom:30px;">
+            <button class="btn btn-primary" onclick="go('send-pin')">Pay ₦2,000.00</button>
+          </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- CARDS HUB -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-cards-hub">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar" style="padding:58px 0 10px;"><h1>Cards & Banks</h1><button class="icon-btn" data-goto="add-bank-account"><span class="material-symbols-rounded">add</span></button></div>
+
+            <div class="row" style="gap:14px; overflow-x:auto; padding:6px 2px 14px;">
+              <div onclick="go('card-details')" style="flex-shrink:0; width:270px; height:166px; border-radius:22px; background:var(--grad); padding:20px; position:relative; overflow:hidden; box-shadow:var(--shadow-glow);">
+                <div style="position:absolute; width:140px; height:140px; background:rgba(255,255,255,0.18); border-radius:50%; top:-60px; right:-40px;"></div>
+                <div class="row between"><span style="font-family:var(--font-display); font-weight:800; color:#04140E; font-size:14px;">Vela Virtual</span><span class="material-symbols-rounded" style="color:#04140E;">contactless</span></div>
+                <div style="margin-top:30px; color:#04140E; font-family:var(--font-display); font-weight:700; font-size:17px; letter-spacing:2px;">5399 •••• •••• 4471</div>
+                <div class="row between" style="margin-top:14px;">
+                  <div><div style="font-size:9px; color:#0B2418; opacity:.7;">CARD HOLDER</div><div style="font-size:12px; color:#04140E; font-weight:700;">DANIEL OKAFOR</div></div>
+                  <div><div style="font-size:9px; color:#0B2418; opacity:.7;">EXPIRES</div><div style="font-size:12px; color:#04140E; font-weight:700;">09/29</div></div>
+                </div>
+              </div>
+              <div onclick="go('card-details')" style="flex-shrink:0; width:270px; height:166px; border-radius:22px; background:linear-gradient(135deg,#1A2233,#0E1420); border:1px solid var(--surface-border); padding:20px; position:relative;">
+                <div class="row between"><span style="font-family:var(--font-display); font-weight:800; font-size:14px;">Vela Debit</span><span class="material-symbols-rounded">contactless</span></div>
+                <div style="margin-top:30px; font-family:var(--font-display); font-weight:700; font-size:17px; letter-spacing:2px;">5399 •••• •••• 9012</div>
+                <div class="row between" style="margin-top:14px;">
+                  <div><div class="tiny muted" style="font-size:9px;">CARD HOLDER</div><div style="font-size:12px; font-weight:700;">DANIEL OKAFOR</div></div>
+                  <div><div class="tiny muted" style="font-size:9px;">EXPIRES</div><div style="font-size:12px; font-weight:700;">03/28</div></div>
+                </div>
+              </div>
+              <button class="grid-icon-item" style="flex-shrink:0; width:90px; height:166px; justify-content:center; background:var(--surface); border:1px dashed var(--surface-border); border-radius:22px;" data-goto="add-bank-account">
+                <span class="material-symbols-rounded" style="font-size:26px;">add_card</span><span class="lbl">New Card</span>
+              </button>
+            </div>
+
+            <div class="section-title"><h3>Linked Bank Accounts</h3></div>
+            <div class="card" style="padding:4px 16px;">
+              <div class="list-item">
+                <div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">account_balance</span></div>
+                <div class="meta"><div class="t1">GTBank</div><div class="t2">•••• 4410 · Daniel Okafor</div></div>
+                <div class="end"><span class="chip success">Default</span></div>
+              </div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item" data-goto="add-bank-account">
+                <div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">account_balance</span></div>
+                <div class="meta"><div class="t1">Access Bank</div><div class="t2">•••• 7723 · Daniel Okafor</div></div>
+                <div class="end"><span class="material-symbols-rounded" style="color:var(--text-3);">chevron_right</span></div>
+              </div>
+            </div>
+
+            <div class="section-title"><h3>Card Management</h3></div>
+            <div class="grid-4">
+              <button class="grid-icon-item" data-goto="card-details"><div class="ic"><span class="material-symbols-rounded">ac_unit</span></div><span class="lbl">Freeze Card</span></button>
+              <button class="grid-icon-item" data-goto="card-details"><div class="ic"><span class="material-symbols-rounded">sync_alt</span></div><span class="lbl">Replace</span></button>
+              <button class="grid-icon-item" data-goto="card-details"><div class="ic"><span class="material-symbols-rounded">pin</span></div><span class="lbl">Set PIN</span></button>
+              <button class="grid-icon-item" data-goto="add-bank-account"><div class="ic"><span class="material-symbols-rounded">account_balance</span></div><span class="lbl">Add Bank</span></button>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- CARD DETAILS -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-card-details">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><h1>Virtual Card</h1><button class="icon-btn"><span class="material-symbols-rounded">more_horiz</span></button></div>
+
+            <div id="cardVisual" style="margin-top:8px; height:188px; border-radius:24px; background:var(--grad); padding:22px; position:relative; overflow:hidden; box-shadow:var(--shadow-glow); transition:.3s;">
+              <div style="position:absolute; width:160px; height:160px; background:rgba(255,255,255,0.18); border-radius:50%; top:-70px; right:-40px;"></div>
+              <div class="row between"><span style="font-family:var(--font-display); font-weight:800; color:#04140E; font-size:15px;">Vela Virtual</span><span class="material-symbols-rounded" style="color:#04140E;">contactless</span></div>
+              <div style="margin-top:34px; color:#04140E; font-family:var(--font-display); font-weight:700; font-size:19px; letter-spacing:2px;">5399 4471 8820 4471</div>
+              <div class="row between" style="margin-top:16px;">
+                <div><div style="font-size:9px; color:#0B2418; opacity:.7;">CARD HOLDER</div><div style="font-size:12px; color:#04140E; font-weight:700;">DANIEL OKAFOR</div></div>
+                <div><div style="font-size:9px; color:#0B2418; opacity:.7;">EXPIRES</div><div style="font-size:12px; color:#04140E; font-weight:700;">09/29</div></div>
+                <div><div style="font-size:9px; color:#0B2418; opacity:.7;">CVV</div><div style="font-size:12px; color:#04140E; font-weight:700;">•••</div></div>
+              </div>
+              <div id="frozenOverlay" style="position:absolute; inset:0; background:rgba(7,11,17,0.7); backdrop-filter:blur(6px); display:none; align-items:center; justify-content:center; flex-direction:column; gap:6px;">
+                <span class="material-symbols-rounded" style="font-size:30px;">ac_unit</span><span style="font-weight:700; font-size:13px;">Card Frozen</span>
+              </div>
+            </div>
+
+            <div class="row" style="gap:10px; margin:16px 0;">
+              <button class="btn btn-secondary" style="flex:1;" onclick="toast('Card details copied')"><span class="material-symbols-rounded" style="font-size:17px;">content_copy</span> Copy Number</button>
+              <button class="btn btn-secondary" style="flex:1;" onclick="toast('CVV revealed for 10s')"><span class="material-symbols-rounded" style="font-size:17px;">visibility</span> Show CVV</button>
+            </div>
+
+            <div class="card row between">
+              <div class="row" style="gap:10px;"><span class="material-symbols-rounded" style="color:var(--blue);">ac_unit</span><span style="font-weight:600; font-size:14px;">Freeze this card</span></div>
+              <div class="switch" id="freezeSwitch" onclick="toggleFreeze()"></div>
+            </div>
+
+            <div class="section-title"><h3>Card Controls</h3></div>
+            <div class="card" style="padding:4px 16px;">
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">public</span></div><div class="meta"><div class="t1">Online Payments</div><div class="t2">Allow international use</div></div><div class="end"><div class="switch on"></div></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">contactless</span></div><div class="meta"><div class="t1">Tap to Pay</div><div class="t2">Contactless payments</div></div><div class="end"><div class="switch on"></div></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">pin</span></div><div class="meta"><div class="t1">Set Card PIN</div><div class="t2">Change your 4-digit card PIN</div></div><div class="end"><span class="material-symbols-rounded" style="color:var(--text-3);">chevron_right</span></div></div>
+            </div>
+
+            <button class="btn btn-danger" style="margin-top:18px;" onclick="toast('Replacement card requested')"><span class="material-symbols-rounded" style="font-size:17px;">sync_alt</span> Replace Card</button>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- ADD BANK ACCOUNT -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-add-bank-account">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><h1>Add Bank Account</h1><span style="width:38px;"></span></div>
+            <div class="field" style="margin-top:8px;"><label>Select Bank</label><div class="input-wrap"><span class="material-symbols-rounded">account_balance</span><input type="text" placeholder="Search bank" value="Access Bank"></div></div>
+            <div class="field"><label>Account Number</label><div class="input-wrap"><span class="material-symbols-rounded">tag</span><input type="text" placeholder="0123456789" value="0123456789"></div></div>
+            <div class="card" style="margin-bottom:18px;">
+              <div class="tiny muted">Account Name</div>
+              <div style="font-weight:700; font-size:15px; margin-top:4px; color:var(--green);">DANIEL CHUKWUDI OKAFOR</div>
+            </div>
+            <button class="btn btn-primary" onclick="toast('Bank account linked'); back();">Link Account</button>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- FINANCE HUB -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-finance-hub">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar" style="padding:58px 0 10px;"><h1>Finance</h1><span style="width:38px;"></span></div>
+
+            <div class="glass" style="padding:20px; position:relative; overflow:hidden;">
+              <div class="blob" style="width:140px;height:140px; background:var(--blue); top:-40px; right:-30px; opacity:.3;"></div>
+              <div style="position:relative; z-index:2;">
+                <span class="tiny muted">Total Savings Balance</span>
+                <div class="display-num" style="font-size:28px; margin-top:6px;">₦1,320,400.00</div>
+                <div class="row" style="gap:10px; margin-top:16px;">
+                  <button class="btn btn-primary" style="flex:1; padding:12px;" data-goto="savings-detail">Save Money</button>
+                  <button class="btn btn-secondary" style="flex:1; padding:12px;" onclick="toast('Withdrawal initiated')">Withdraw</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="section-title"><h3>Savings Plans</h3></div>
+            <div class="card" style="padding:4px 16px;">
+              <div class="list-item" data-goto="savings-detail">
+                <div class="ic" style="background:var(--green-soft);"><span class="material-symbols-rounded" style="color:var(--green); font-size:20px;">savings</span></div>
+                <div class="meta"><div class="t1">Flexible Savings</div><div class="t2">12% p.a. · withdraw anytime</div></div>
+                <div class="end"><div class="v1">₦820,400</div></div>
+              </div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item" data-goto="savings-detail">
+                <div class="ic" style="background:var(--blue-soft);"><span class="material-symbols-rounded" style="color:var(--blue); font-size:20px;">lock_clock</span></div>
+                <div class="meta"><div class="t1">Fixed Savings</div><div class="t2">18% p.a. · locked 90 days</div></div>
+                <div class="end"><div class="v1">₦500,000</div></div>
+              </div>
+            </div>
+
+            <div class="section-title"><h3>Borrow & Invest</h3></div>
+            <div class="row" style="gap:12px;">
+              <div class="card" style="flex:1;" data-goto="loan-request">
+                <span class="material-symbols-rounded" style="color:var(--amber); font-size:22px;">payments</span>
+                <div style="font-weight:700; font-size:13.5px; margin-top:10px;">Loan</div>
+                <div class="tiny muted" style="margin-top:2px;">Up to ₦500,000</div>
+              </div>
+              <div class="card" style="flex:1;" onclick="toast('Investment plans opening soon')">
+                <span class="material-symbols-rounded" style="color:var(--blue); font-size:22px;">trending_up</span>
+                <div style="font-weight:700; font-size:13.5px; margin-top:10px;">Invest</div>
+                <div class="tiny muted" style="margin-top:2px;">From 15% returns</div>
+              </div>
+            </div>
+
+            <div class="section-title"><h3>Budget Planner</h3></div>
+            <div class="card">
+              <div class="row between"><span class="tiny" style="font-weight:600;">Monthly spending limit</span><span class="tiny" style="font-weight:700;">₦180,000 / ₦250,000</span></div>
+              <div class="progress-bar" style="margin-top:10px;"><div class="fill" style="width:72%;"></div></div>
+              <div class="tiny muted" style="margin-top:8px;">72% used · 9 days left this cycle</div>
+              <button class="btn btn-secondary btn-sm" style="margin-top:14px;" onclick="toast('Budget categories updated')">Manage Categories</button>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SAVINGS DETAIL -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-savings-detail">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><h1>Flexible Savings</h1><span style="width:38px;"></span></div>
+            <div class="glass" style="padding:20px; text-align:center; margin-top:8px;">
+              <span class="tiny muted">Current Balance</span>
+              <div class="display-num" style="font-size:30px; margin-top:6px;">₦820,400.00</div>
+              <div class="chip success" style="margin-top:10px;">Earning 12% p.a.</div>
+            </div>
+
+            <div class="section-title"><h3>Quick Save</h3></div>
+            <div class="row" style="gap:8px; margin-bottom:16px;">
+              <button class="chip" style="flex:1; justify-content:center; padding:12px;">+₦5,000</button>
+              <button class="chip" style="flex:1; justify-content:center; padding:12px;">+₦10,000</button>
+              <button class="chip" style="flex:1; justify-content:center; padding:12px;">+₦50,000</button>
+            </div>
+
+            <div class="card row between">
+              <div class="row" style="gap:10px;"><span class="material-symbols-rounded" style="color:var(--green);">autorenew</span><div><div style="font-weight:600; font-size:13.5px;">Auto-save daily</div><div class="tiny muted">₦2,000 every day at 8AM</div></div></div>
+              <div class="switch on"></div>
+            </div>
+
+            <div class="section-title"><h3>Savings History</h3></div>
+            <div class="card" style="padding:4px 16px;">
+              <div class="list-item"><div class="ic" style="background:var(--green-soft);"><span class="material-symbols-rounded" style="color:var(--green); font-size:18px;">south_west</span></div><div class="meta"><div class="t1">Auto-save deposit</div><div class="t2">Today, 8:00 AM</div></div><div class="end"><div class="v1">+₦2,000</div></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item"><div class="ic" style="background:var(--green-soft);"><span class="material-symbols-rounded" style="color:var(--green); font-size:18px;">south_west</span></div><div class="meta"><div class="t1">Manual top-up</div><div class="t2">Yesterday, 6:14 PM</div></div><div class="end"><div class="v1">+₦50,000</div></div></div>
+            </div>
+          </div></div>
+          <div class="screen-content" style="padding-bottom:30px;"><button class="btn btn-primary" onclick="toast('₦5,000 added to savings')">Save Money Now</button></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- LOAN REQUEST -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-loan-request">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><h1>Loan Request</h1><span style="width:38px;"></span></div>
+            <div class="card" style="margin-top:8px;">
+              <div class="row between"><span class="tiny muted">Eligible amount</span><span class="chip success">Pre-approved</span></div>
+              <div class="display-num" style="font-size:26px; margin-top:8px;">Up to ₦500,000</div>
+            </div>
+
+            <div style="text-align:center; margin:26px 0 8px;">
+              <div class="tiny muted">Loan Amount</div>
+              <div class="row" style="justify-content:center; align-items:flex-end; gap:4px; margin-top:6px;"><span class="display-num" style="font-size:22px; margin-bottom:4px;">₦</span><span class="display-num" style="font-size:38px;">150,000</span></div>
+            </div>
+            <input type="range" min="10000" max="500000" value="150000" style="width:100%; accent-color:#1FE08A; margin:10px 0 20px;">
+
+            <div class="field"><label>Repayment period</label>
+              <div class="row" style="gap:8px;">
+                <span class="chip" style="flex:1; justify-content:center; padding:11px;">3 months</span>
+                <span class="chip" style="flex:1; justify-content:center; padding:11px; background:var(--grad-soft); color:var(--green); border-color:var(--green);">6 months</span>
+                <span class="chip" style="flex:1; justify-content:center; padding:11px;">12 months</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="row between" style="margin-bottom:8px;"><span class="tiny muted">Interest rate</span><span class="tiny" style="font-weight:700;">3.5% / month</span></div>
+              <div class="row between" style="margin-bottom:8px;"><span class="tiny muted">Monthly repayment</span><span class="tiny" style="font-weight:700;">₦29,750.00</span></div>
+              <div class="row between"><span class="tiny muted">Total repayable</span><span class="tiny" style="font-weight:700;">₦178,500.00</span></div>
+            </div>
+            <button class="btn btn-primary" style="margin-top:18px;" onclick="toast('Loan request submitted')">Request Loan</button>
+
+            <div class="section-title"><h3>Loan Repayment</h3></div>
+            <div class="card">
+              <div class="row between"><span class="tiny" style="font-weight:600;">Active Loan — ₦150,000</span><span class="chip pending">Due in 12 days</span></div>
+              <div class="progress-bar" style="margin-top:12px;"><div class="fill" style="width:40%;"></div></div>
+              <div class="tiny muted" style="margin-top:8px;">₦59,500 repaid of ₦178,500</div>
+              <button class="btn btn-secondary btn-sm" style="margin-top:12px;" onclick="toast('Repayment of ₦29,750 successful')">Make Repayment</button>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SECURITY SETTINGS -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-security-settings">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><h1>Security</h1><span style="width:38px;"></span></div>
+
+            <div class="section-title" style="margin-top:6px;"><h3 style="font-size:12px; text-transform:uppercase; letter-spacing:.5px; color:var(--text-2);">Authentication</h3></div>
+            <div class="card" style="padding:4px 16px;">
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">pin</span></div><div class="meta"><div class="t1">Change Transaction PIN</div><div class="t2">Last changed 3 months ago</div></div><div class="end"><span class="material-symbols-rounded" style="color:var(--text-3);">chevron_right</span></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">password</span></div><div class="meta"><div class="t1">Change Password</div><div class="t2">Update your login password</div></div><div class="end"><span class="material-symbols-rounded" style="color:var(--text-3);">chevron_right</span></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">fingerprint</span></div><div class="meta"><div class="t1">Fingerprint Login</div><div class="t2">Use fingerprint to unlock app</div></div><div class="end"><div class="switch on"></div></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">face</span></div><div class="meta"><div class="t1">Face ID</div><div class="t2">Use Face ID to unlock app</div></div><div class="end"><div class="switch"></div></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">verified_user</span></div><div class="meta"><div class="t1">Two-Factor Authentication</div><div class="t2">Extra layer via SMS/email OTP</div></div><div class="end"><div class="switch on"></div></div></div>
+            </div>
+
+            <div class="section-title"><h3 style="font-size:12px; text-transform:uppercase; letter-spacing:.5px; color:var(--text-2);">Devices & Activity</h3></div>
+            <div class="card" style="padding:4px 16px;">
+              <div class="list-item" data-goto="login-history"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">devices</span></div><div class="meta"><div class="t1">Device Management</div><div class="t2">2 active devices</div></div><div class="end"><span class="material-symbols-rounded" style="color:var(--text-3);">chevron_right</span></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item" data-goto="login-history"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">history</span></div><div class="meta"><div class="t1">Login History</div><div class="t2">View recent sign-ins</div></div><div class="end"><span class="material-symbols-rounded" style="color:var(--text-3);">chevron_right</span></div></div>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- LOGIN HISTORY / DEVICE MANAGEMENT -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-login-history">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><h1>Devices & Logins</h1><span style="width:38px;"></span></div>
+            <div class="card" style="padding:4px 16px; margin-top:8px;">
+              <div class="list-item">
+                <div class="ic" style="background:var(--green-soft);"><span class="material-symbols-rounded" style="color:var(--green); font-size:20px;">smartphone</span></div>
+                <div class="meta"><div class="t1">iPhone 15 Pro</div><div class="t2">Lagos, NG · This device</div></div>
+                <div class="end"><span class="chip success">Active</span></div>
+              </div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item">
+                <div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">laptop_mac</span></div>
+                <div class="meta"><div class="t1">MacBook Pro — Chrome</div><div class="t2">Abuja, NG · 2 days ago</div></div>
+                <div class="end"><button class="tiny" style="color:var(--red); font-weight:700; background:none; border:none;" onclick="toast('Device signed out')">Sign out</button></div>
+              </div>
+            </div>
+            <div class="section-title"><h3>Recent Sign-ins</h3></div>
+            <div class="card" style="padding:4px 16px;">
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">login</span></div><div class="meta"><div class="t1">Password login</div><div class="t2">Today, 9:12 AM · Lagos</div></div><div class="end"><span class="chip success">Success</span></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">login</span></div><div class="meta"><div class="t1">Face ID login</div><div class="t2">Yesterday, 7:48 PM · Lagos</div></div><div class="end"><span class="chip success">Success</span></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">login</span></div><div class="meta"><div class="t1">Failed PIN attempt</div><div class="t2">3 days ago · Lagos</div></div><div class="end"><span class="chip failed">Blocked</span></div></div>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SETTINGS MAIN -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-settings">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar" style="padding:58px 0 6px;"><h1>Settings</h1><span style="width:38px;"></span></div>
+            <div class="card row" style="gap:14px;" data-goto="edit-profile">
+              <div class="avatar" style="width:54px;height:54px; font-size:18px;">DO</div>
+              <div style="flex:1;">
+                <div style="font-weight:700; font-size:15px;">Daniel Okafor</div>
+                <div class="tiny muted" style="margin-top:2px;">daniel@example.com</div>
+              </div>
+              <span class="chip success">KYC Tier 2</span>
+            </div>
+
+            <div class="section-title"><h3 style="font-size:12px; text-transform:uppercase; letter-spacing:.5px; color:var(--text-2);">Account</h3></div>
+            <div class="card" style="padding:4px 16px;">
+              <div class="list-item" data-goto="edit-profile"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">person</span></div><div class="meta"><div class="t1">Edit Profile</div></div><div class="end"><span class="material-symbols-rounded" style="color:var(--text-3);">chevron_right</span></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item" data-goto="kyc-verification"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">verified</span></div><div class="meta"><div class="t1">KYC Verification</div></div><div class="end"><span class="chip success">Tier 2</span></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item" data-goto="security-settings"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">shield_lock</span></div><div class="meta"><div class="t1">Security</div></div><div class="end"><span class="material-symbols-rounded" style="color:var(--text-3);">chevron_right</span></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item" data-goto="rewards"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">redeem</span></div><div class="meta"><div class="t1">Rewards & Referrals</div></div><div class="end"><span class="material-symbols-rounded" style="color:var(--text-3);">chevron_right</span></div></div>
+            </div>
+
+            <div class="section-title"><h3 style="font-size:12px; text-transform:uppercase; letter-spacing:.5px; color:var(--text-2);">Preferences</h3></div>
+            <div class="card" style="padding:4px 16px;">
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">notifications</span></div><div class="meta"><div class="t1">Push Notifications</div></div><div class="end"><div class="switch on"></div></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">dark_mode</span></div><div class="meta"><div class="t1">Dark Mode</div></div><div class="end"><div class="switch on"></div></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">language</span></div><div class="meta"><div class="t1">Language</div></div><div class="end"><div class="t2">English</div></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">lock</span></div><div class="meta"><div class="t1">Privacy</div></div><div class="end"><span class="material-symbols-rounded" style="color:var(--text-3);">chevron_right</span></div></div>
+            </div>
+
+            <div class="section-title"><h3 style="font-size:12px; text-transform:uppercase; letter-spacing:.5px; color:var(--text-2);">Support</h3></div>
+            <div class="card" style="padding:4px 16px;">
+              <div class="list-item" data-goto="live-chat"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">support_agent</span></div><div class="meta"><div class="t1">Live Chat Support</div></div><div class="end"><span class="material-symbols-rounded" style="color:var(--text-3);">chevron_right</span></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">help</span></div><div class="meta"><div class="t1">Help Center</div></div><div class="end"><span class="material-symbols-rounded" style="color:var(--text-3);">chevron_right</span></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">call</span></div><div class="meta"><div class="t1">Contact Us</div></div><div class="end"><span class="material-symbols-rounded" style="color:var(--text-3);">chevron_right</span></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">description</span></div><div class="meta"><div class="t1">Terms & Conditions</div></div><div class="end"><span class="material-symbols-rounded" style="color:var(--text-3);">chevron_right</span></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">info</span></div><div class="meta"><div class="t1">About Vela</div><div class="t2">Version 2.4.1</div></div></div>
+            </div>
+
+            <button class="btn btn-danger" style="margin-top:18px;" data-goto="login"><span class="material-symbols-rounded" style="font-size:17px;">logout</span> Log Out</button>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- EDIT PROFILE -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-edit-profile">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><h1>Edit Profile</h1><span style="width:38px;"></span></div>
+            <div style="text-align:center; margin:10px 0 20px; position:relative;">
+              <div class="avatar" style="width:84px;height:84px; font-size:26px; margin:0 auto;">DO</div>
+              <button class="icon-btn" style="position:absolute; bottom:-4px; left:50%; transform:translateX(18px); width:30px;height:30px;"><span class="material-symbols-rounded" style="font-size:15px;">edit</span></button>
+            </div>
+            <div class="field"><label>Full Name</label><div class="input-wrap"><span class="material-symbols-rounded">badge</span><input type="text" value="Daniel Chukwudi Okafor"></div></div>
+            <div class="field"><label>Email Address</label><div class="input-wrap"><span class="material-symbols-rounded">mail</span><input type="text" value="daniel@example.com"></div></div>
+            <div class="field"><label>Phone Number</label><div class="input-wrap"><span class="material-symbols-rounded">call</span><input type="text" value="+234 801 234 5678"></div></div>
+            <div class="field"><label>Date of Birth</label><div class="input-wrap"><span class="material-symbols-rounded">calendar_month</span><input type="text" value="14 Mar 1994"></div></div>
+            <div class="field"><label>Username / Tag</label><div class="input-wrap"><span class="material-symbols-rounded">tag</span><input type="text" value="@danielok"></div></div>
+            <button class="btn btn-primary" style="margin-top:8px;" onclick="toast('Profile updated successfully')">Save Changes</button>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- KYC VERIFICATION -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-kyc-verification">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><h1>KYC Verification</h1><span style="width:38px;"></span></div>
+
+            <div class="glass" style="padding:18px; margin-top:8px;">
+              <div class="row between"><span style="font-weight:700; font-size:14px;">Verification Level</span><span class="chip success">Tier 2</span></div>
+              <div class="progress-bar" style="margin-top:12px;"><div class="fill" style="width:66%;"></div></div>
+              <div class="tiny muted" style="margin-top:8px;">Complete Tier 3 to raise your transfer limit to ₦5,000,000/day</div>
+            </div>
+
+            <div class="section-title"><h3>Verification Steps</h3></div>
+            <div class="card" style="padding:4px 16px;">
+              <div class="list-item"><div class="ic" style="background:var(--green-soft);"><span class="material-symbols-rounded" style="color:var(--green); font-size:20px;">check</span></div><div class="meta"><div class="t1">Phone Number</div><div class="t2">Verified</div></div><div class="end"><span class="chip success">Done</span></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item"><div class="ic" style="background:var(--green-soft);"><span class="material-symbols-rounded" style="color:var(--green); font-size:20px;">check</span></div><div class="meta"><div class="t1">BVN Verification</div><div class="t2">Linked to 080*****678</div></div><div class="end"><span class="chip success">Done</span></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item"><div class="ic" style="background:var(--green-soft);"><span class="material-symbols-rounded" style="color:var(--green); font-size:20px;">check</span></div><div class="meta"><div class="t1">NIN Verification</div><div class="t2">National ID linked</div></div><div class="end"><span class="chip success">Done</span></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item" onclick="toast('Opening document upload...')"><div class="ic" style="background:rgba(255,179,71,0.12);"><span class="material-symbols-rounded" style="color:var(--amber); font-size:20px;">badge</span></div><div class="meta"><div class="t1">Upload ID Card</div><div class="t2">Driver's license, passport or voter card</div></div><div class="end"><span class="chip pending">Pending</span></div></div>
+              <div class="divider" style="margin:4px 0;"></div>
+              <div class="list-item" onclick="toast('Opening address verification...')"><div class="ic"><span class="material-symbols-rounded" style="font-size:20px;">home_pin</span></div><div class="meta"><div class="t1">Proof of Address</div><div class="t2">Utility bill or bank statement</div></div><div class="end"><span class="material-symbols-rounded" style="color:var(--text-3);">chevron_right</span></div></div>
+            </div>
+            <button class="btn btn-primary" style="margin-top:16px;" onclick="toast('Document submitted for review')">Continue Verification</button>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- TRANSACTION HISTORY -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-transactions">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><h1>Transactions</h1><button class="icon-btn"><span class="material-symbols-rounded">tune</span></button></div>
+            <div class="row" style="gap:8px; margin:6px 0 16px; overflow-x:auto;">
+              <span class="chip" style="background:var(--grad-soft); color:var(--green); border-color:var(--green);">All</span>
+              <span class="chip">Sent</span><span class="chip">Received</span><span class="chip">Bills</span><span class="chip">Cards</span>
+            </div>
+            <div class="section-title" style="margin-top:0;"><h3 style="font-size:12px; text-transform:uppercase; letter-spacing:.5px; color:var(--text-2);">Today</h3></div>
+            <div class="card" style="padding:4px 16px;" id="txnListToday"></div>
+            <div class="section-title"><h3 style="font-size:12px; text-transform:uppercase; letter-spacing:.5px; color:var(--text-2);">Yesterday</h3></div>
+            <div class="card" style="padding:4px 16px;" id="txnListYesterday"></div>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- TRANSACTION DETAILS / RECEIPT -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-transaction-details">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><h1>Receipt</h1><button class="icon-btn" onclick="toast('Receipt shared')"><span class="material-symbols-rounded">ios_share</span></button></div>
+
+            <div class="glass" style="padding:24px; text-align:center; margin-top:6px;">
+              <div style="width:60px;height:60px;border-radius:50%; background:var(--grad-soft); display:flex; align-items:center; justify-content:center; margin:0 auto 14px;">
+                <span class="material-symbols-rounded" style="font-size:30px; color:var(--green);">north_east</span>
+              </div>
+              <div class="tiny muted">Money Sent</div>
+              <div class="display-num" style="font-size:28px; margin-top:6px;">₦15,000.00</div>
+              <div class="chip success" style="margin-top:10px;">Successful</div>
+            </div>
+
+            <div class="card" style="margin-top:16px;">
+              <div class="row between" style="margin-bottom:12px;"><span class="tiny muted">Reference Number</span><span class="tiny" style="font-weight:700;">VLA-TXN-7782910</span></div>
+              <div class="divider" style="margin:0 0 12px;"></div>
+              <div class="row between" style="margin-bottom:12px;"><span class="tiny muted">Sender</span><span class="tiny" style="font-weight:700;">Daniel Okafor</span></div>
+              <div class="row between" style="margin-bottom:12px;"><span class="tiny muted">Receiver</span><span class="tiny" style="font-weight:700;">Chiamaka Eze</span></div>
+              <div class="row between" style="margin-bottom:12px;"><span class="tiny muted">Bank Name</span><span class="tiny" style="font-weight:700;">GTBank</span></div>
+              <div class="row between" style="margin-bottom:12px;"><span class="tiny muted">Account Number</span><span class="tiny" style="font-weight:700;">8102 9934 410</span></div>
+              <div class="row between" style="margin-bottom:12px;"><span class="tiny muted">Wallet Number</span><span class="tiny" style="font-weight:700;">VLA-559213-NG</span></div>
+              <div class="divider" style="margin:0 0 12px;"></div>
+              <div class="row between" style="margin-bottom:12px;"><span class="tiny muted">Date & Time</span><span class="tiny" style="font-weight:700;">28 Jun 2026, 4:52 PM</span></div>
+              <div class="row between" style="margin-bottom:12px;"><span class="tiny muted">Transaction Fee</span><span class="tiny" style="font-weight:700;">₦25.00</span></div>
+              <div class="row between"><span class="tiny muted">Status</span><span class="chip success">Completed</span></div>
+            </div>
+
+            <div class="row" style="gap:10px; margin-top:16px;">
+              <button class="btn btn-secondary" style="flex:1;" onclick="toast('Receipt downloaded as PDF')"><span class="material-symbols-rounded" style="font-size:17px;">download</span> Download</button>
+              <button class="btn btn-secondary" style="flex:1;" onclick="toast('Receipt shared')"><span class="material-symbols-rounded" style="font-size:17px;">ios_share</span> Share</button>
+            </div>
+            <button class="btn btn-ghost" style="margin-top:10px;" onclick="toast('Opening support chat...'); go('live-chat')">Report an Issue</button>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- REWARDS / REFERRAL -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-rewards">
+          <div class="screen-scroll"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button><h1>Rewards</h1><span style="width:38px;"></span></div>
+
+            <div class="glass" style="padding:20px; text-align:center; position:relative; overflow:hidden; margin-top:6px;">
+              <div class="blob" style="width:150px;height:150px; background:var(--amber); top:-40px; right:-30px; opacity:.25;"></div>
+              <span class="material-symbols-rounded" style="font-size:34px; color:var(--amber); position:relative; z-index:2;">star</span>
+              <div class="display-num" style="font-size:26px; margin-top:8px; position:relative; z-index:2;">1,280 points</div>
+              <div class="tiny muted" style="margin-top:4px; position:relative; z-index:2;">≈ ₦1,280 redeemable cashback</div>
+              <button class="btn btn-primary btn-sm" style="margin:14px auto 0; position:relative; z-index:2;" onclick="toast('Points redeemed to wallet')">Redeem Points</button>
+            </div>
+
+            <div class="section-title"><h3>Daily Check-in</h3></div>
+            <div class="card">
+              <div class="row between" style="gap:6px;" id="checkinRow"></div>
+              <button class="btn btn-secondary btn-sm" style="margin-top:14px; width:100%;" onclick="toast('+10 points — day streak continued!')">Check In Today (+10 pts)</button>
+            </div>
+
+            <div class="section-title"><h3>Refer & Earn</h3></div>
+            <div class="card">
+              <p class="tiny muted" style="line-height:1.6;">Invite friends to Vela. You both get ₦1,000 when they complete their first transaction.</p>
+              <div class="row between card" style="margin-top:12px; background:var(--surface-2);">
+                <span class="tiny" style="font-weight:700;">DANIEL2026</span>
+                <button class="icon-btn" style="width:30px;height:30px;" onclick="toast('Referral code copied')"><span class="material-symbols-rounded" style="font-size:15px;">content_copy</span></button>
+              </div>
+              <button class="btn btn-primary btn-sm" style="margin-top:12px; width:100%;" onclick="toast('Invite link shared')"><span class="material-symbols-rounded" style="font-size:16px;">ios_share</span> Share Invite Link</button>
+            </div>
+
+            <div class="section-title"><h3>Promo Codes</h3></div>
+            <div class="input-wrap"><span class="material-symbols-rounded">local_offer</span><input type="text" placeholder="Enter promo code"><button class="btn btn-primary btn-sm" onclick="toast('Promo code applied: ₦500 bonus')">Apply</button></div>
+          </div></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- LIVE CHAT SUPPORT -->
+        <!-- ============================================================ -->
+        <div class="screen" id="screen-live-chat">
+          <div class="screen-scroll" style="flex:1;"><div class="screen-content">
+            <div class="topbar"><button class="icon-btn" data-back><span class="material-symbols-rounded">arrow_back</span></button>
+              <div class="row" style="gap:8px;"><div style="width:30px;height:30px; border-radius:50%; background:var(--grad); display:flex; align-items:center; justify-content:center;"><span class="material-symbols-rounded" style="color:#04140E; font-size:16px;">support_agent</span></div><div><div style="font-size:13.5px; font-weight:700;">Vela Support</div><div class="tiny" style="color:var(--green);">● Online</div></div></div>
+              <button class="icon-btn"><span class="material-symbols-rounded">call</span></button>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:12px; margin-top:10px;">
+              <div style="max-width:78%; background:var(--surface-2); border-radius:16px 16px 16px 4px; padding:11px 14px; font-size:13px;">Hi Daniel 👋 Welcome to Vela Support. How can we help you today?</div>
+              <div style="max-width:78%; align-self:flex-end; background:var(--grad); color:#04140E; border-radius:16px 16px 4px 16px; padding:11px 14px; font-size:13px; font-weight:600;">Hi, my electricity token didn't arrive after payment</div>
+              <div style="max-width:78%; background:var(--surface-2); border-radius:16px 16px 16px 4px; padding:11px 14px; font-size:13px;">Sorry about that! Let me pull up your last transaction — give me a moment ⏳</div>
+              <div class="card" style="align-self:flex-start; max-width:84%; padding:12px 14px;">
+                <div class="tiny muted">Electricity · IKEDC</div>
+                <div style="font-weight:700; font-size:14px; margin-top:2px;">₦5,000.00 · Ref VLA-TXN-7782811</div>
+                <span class="chip pending" style="margin-top:8px;">Processing</span>
+              </div>
+              <div style="max-width:78%; background:var(--surface-2); border-radius:16px 16px 16px 4px; padding:11px 14px; font-size:13px;">Your token is being re-issued and will arrive within 5 minutes. We're sorry for the delay 🙏</div>
+            </div>
+          </div></div>
+          <div class="screen-content" style="padding:12px 14px 26px;">
+            <div class="row" style="gap:8px;">
+              <div class="input-wrap" style="flex:1;"><input type="text" placeholder="Type a message..."></div>
+              <button class="icon-btn" style="background:var(--grad); width:46px; height:46px; border-radius:15px;" onclick="toast('Message sent')"><span class="material-symbols-rounded" style="color:#04140E;">send</span></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCREENS_END -->
+      </div>
+
+      <div class="bottom-nav" id="bottomNav">
+        <button class="nav-item" data-go="home"><span class="material-symbols-rounded">home</span><span class="lbl">Home</span></button>
+        <button class="nav-item" data-go="cards-hub"><span class="material-symbols-rounded">credit_card</span><span class="lbl">Cards</span></button>
+        <button class="nav-item center" data-go="scan-qr"><span class="material-symbols-rounded">qr_code_scanner</span></button>
+        <button class="nav-item" data-go="bills-hub"><span class="material-symbols-rounded">receipt_long</span><span class="lbl">Bills</span></button>
+        <button class="nav-item" data-go="settings"><span class="material-symbols-rounded">person</span><span class="lbl">Profile</span></button>
+      </div>
+
+      <div class="toast" id="toast">
+        <span class="material-symbols-rounded">check_circle</span>
+        <span class="tt" id="toastText">Done</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-header" style="margin-top:-4px;">
+    <p class="tiny">Prototype includes 30+ linked screens — auth, dashboard, transfers, bills, cards, savings, loans, security & more.</p>
+  </div>
+</div>
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
